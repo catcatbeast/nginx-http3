@@ -65,7 +65,9 @@ For example, if you want to add `http_scgi_module` back, you need to remove `--h
 
 ## Use in another distribution
 
-Fork this repo, enable GitHub Actions, edit `Dockerfile` and change `bookworm` to the one you like (e.g. `bullseye`). Then wait for GitHub Actions to run. After it finishes, you can download from releases.
+Fork this repo, enable GitHub Actions, edit `Dockerfile` and `build.sh`, and change `bookworm` to the one you like. Then wait for GitHub Actions to run. After it finishes, you can download from releases.
+
+For example, if you want to use in Debian bullseye, you need to update all occurrence of `bookworm` to `bullseye` in `Dockerfile` and `build.sh`.
 
 ## Recommended NGINX config
 
@@ -76,7 +78,6 @@ http {
   gzip on;
   gzip_comp_level 6;
   gzip_types application/atom+xml application/javascript application/json application/rss+xml application/vnd.ms-fontobject application/x-font-opentype application/x-font-truetype application/x-font-ttf application/x-javascript application/xhtml+xml application/xml font/eot font/opentype font/otf font/truetype image/svg+xml image/vnd.microsoft.icon image/x-icon image/x-win-bitmap text/css text/javascript text/plain text/xml;
-  gzip_vary on;
   quic_gso on;
   quic_retry on;
   ssl_certificate /path/to/cert_plus_intermediate;
